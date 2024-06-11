@@ -42,7 +42,7 @@ jobs:
     steps:
       - name: Output File Name
         run: echo '${{needs.build.outputs.script-file}}'
-       - name: Cache Dependencies
+      - name: Cache Dependencies
         uses: actions/cache@v3
         with:
           path: ~/.npm
