@@ -26,3 +26,11 @@ jobs:
             package.json
       - name: Deploy project
         run: echo "Deploying..."
+  download:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: download-artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
